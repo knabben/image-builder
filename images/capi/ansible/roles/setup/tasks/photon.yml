@@ -23,7 +23,7 @@
 - import_tasks: rpm_repos.yml
 
 - name: Perform a tdnf distro-sync
-  command: tdnf distro-sync -y --refresh
+  command: tdnf distro-sync -y --refresh --setopt=reposdir=/etc/yum.repos.d/temp
   register: distro
   changed_when: '"Nothing to do" not in distro.stderr'
 

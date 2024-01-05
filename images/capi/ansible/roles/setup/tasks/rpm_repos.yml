@@ -28,7 +28,7 @@
 - name: Install extra repos
   copy:
     src: "{{ item }}"
-    dest: "/etc/yum.repos.d/{{ item | basename }}"
+    dest: "/etc/yum.repos.d/temp/{{ item | basename }}"
     mode: "0644"
   loop: "{{ extra_repos.split() }}"
   when: extra_repos != ""
